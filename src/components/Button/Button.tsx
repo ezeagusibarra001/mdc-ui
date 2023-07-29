@@ -1,47 +1,22 @@
 import React from "react";
 import "./Button.css";
+import { AVAILABLE_COLORS } from "../../types";
 
-export interface ButtonProps {
-    /**
-     * Is this the principal call to action on the page?
-     */
-    type?: "primary" | "secondary";
-    /**
-     * What background color to use
-     */
-    textColor?: string;
-    /**
-     * How large should the button be?
-     */
-    size?: "small" | "medium" | "large";
-    /**
-     * Button contents
-     */
+type ButtonProps = {
     label: string;
-    /**
-     * Optional click handler
-     */
-    onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-}
+    color?: AVAILABLE_COLORS;
+};
 
-/**
- * Primary UI component for user interaction
- */
-const Button = ({
-    type = "primary",
-    textColor,
-    size = "medium",
-    onClick,
-    label,
-}: ButtonProps) => {
+const Button = ({label, color} : ButtonProps) => {
     return (
-        <button
-            type="button"
-            style={textColor ? { color: textColor } : {}}
-            onClick={onClick}
-        >
-            {label}
-        </button>
+        <>
+            <button>{label}</button>
+            <style>{`
+                button {
+                    background-color: var(--${color}-500);
+                }
+            `}</style>
+        </>
     );
 };
 
