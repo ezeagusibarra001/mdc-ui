@@ -1,6 +1,6 @@
 import React from "react";
 import "./Button.css";
-import { AVAILABLE_COLORS } from "../../types";
+import { AVAILABLE_COLORS } from "../../types/index";
 
 type ButtonProps = {
     label: string;
