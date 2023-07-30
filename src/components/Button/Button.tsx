@@ -11,7 +11,7 @@ type ButtonProps = {
     weight?: "extralight" | "light" | "regular" | "semibold" | "bold";
 };
 
-const Button = ({ label, color = "blue", textColor = "white", shade = "DEFAULT", size = "medium", weight = "regular" }: ButtonProps) => {
+export default function Button({ label, color = "blue", textColor = "white", shade = "DEFAULT", size = "medium", weight = "regular" }: ButtonProps) {
     const bgColor = useMemo(() => (shade === "DEFAULT" ? `var(--${color})` : `var(--${color}-${shade})`), [color, shade]);
     const textSize = useMemo(() => {
         switch (size) {
@@ -54,5 +54,3 @@ const Button = ({ label, color = "blue", textColor = "white", shade = "DEFAULT",
         </>
     );
 };
-
-export default Button;
