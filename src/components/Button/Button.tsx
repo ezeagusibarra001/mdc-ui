@@ -40,7 +40,7 @@ export default function Button({ label, color = "blue", textColor = "white", sha
     return (
         <>
             <button>{label}</button>
-            <style>{`
+            <style jsx>{`
                 button {
                     border: none;
                     border-radius: 40px;

@@ -1,7 +1,7 @@
 import { Color, SHADES } from "../../types/types";
 
 export const IconNames = [
-   "hamburger"
+   "hamburger",
 ] as const;
 
 export type IconName = typeof IconNames[number];

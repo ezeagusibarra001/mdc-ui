@@ -19,7 +19,7 @@ export default function Header({ logo, color, shade }: HeaderProps) {
           <Icon name="hamburger" color={color} shade={shade} />
         </div>
       </header>
-      <style>
+      <style jsx>
         {`
           header{
             display: flex;
