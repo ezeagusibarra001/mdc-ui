@@ -3,7 +3,7 @@ import React from 'react'
 import { getCssVariables } from "../../constants/Colors";
 
 
-const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
+const CssBase: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
     return (
         <>
             {children}
@@ -22,4 +22,4 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
     )
 }
 
-export default CssBaseline
+export default CssBase
