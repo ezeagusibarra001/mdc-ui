@@ -1,6 +1,6 @@
 {
   "name": "mdc-ui",
-  "version": "1.0.35",
+  "version": "1.0.36",
   "description": "MDC +54 React components library",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -22,6 +22,7 @@
     "@storybook/react": "7.1.1",
     "@storybook/react-webpack5": "7.1.1",
     "@storybook/testing-library": "0.2.0",
+    "@styled/storybook-addon-jsx": "^7.4.2",
     "@types/react": "^18.2.17",
     "postcss": "^8.4.27",
     "react": "^18.2.0",
