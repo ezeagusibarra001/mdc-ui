@@ -7,7 +7,6 @@
   "types": "lib/index.d.ts",
   "author": "MDC +54",
   "license": "MIT",
-  "type": "module",
   "devDependencies": {
     "@babel/preset-env": "^7.22.9",
     "@babel/preset-react": "^7.22.5",
