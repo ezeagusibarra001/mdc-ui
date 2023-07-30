@@ -1,16 +1,17 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import Button from "./Button";
+import type { Meta, StoryObj } from '@storybook/react';
 
-// Default metadata of the story https://storybook.js.org/docs/react/api/csf#default-export
-const meta: Meta<typeof Button> = {
-  title: "Components/Button",
-  component: Button,
-};
+import Button from '.'
+
+const meta = {
+    title: 'MDC+54/Button',
+    component: Button,
+    tags: ['autodocs'],
+    argTypes: {
+    },
+} satisfies Meta<typeof Button>;
 
 export default meta;
-
-// The story type for the component https://storybook.js.org/docs/react/api/csf#named-story-exports
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
