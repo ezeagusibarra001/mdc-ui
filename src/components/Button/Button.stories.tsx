@@ -14,7 +14,6 @@ type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    label: "Boton",
-    color: "red",
+    label: "Primary Button",
   },
 };

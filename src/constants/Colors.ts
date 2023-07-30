@@ -1,4 +1,4 @@
-export type Color = keyof typeof AVAILABLE_COLORS;
+import { Color } from "../types/types";
 
 export const AVAILABLE_COLORS = {
     "transparent": {
