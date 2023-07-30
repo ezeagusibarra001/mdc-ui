@@ -17,5 +17,10 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
     args: {
         children: <h1>Hello World</h1>,
+        header: {
+            logo: "/logo.png",
+            color: "red",
+            shade: "900",
+        }
     },
 };
