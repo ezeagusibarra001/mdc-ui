@@ -11,7 +11,7 @@ export default function Icon({ name, color, shade = "DEFAULT" }: IconProps) {
                 <path d="M1 1H23" stroke-width="2" stroke-linecap="round" />
                 <path d="M1 8H23" stroke-width="2" stroke-linecap="round" />
                 <path d="M1 15H23" stroke-width="2" stroke-linecap="round" />
-                <style jsx>{`
+                <style jsx >{`
                     svg {
                         stroke: var(--icon-color);
                         ${iconColor && `
