@@ -1,3 +1,3 @@
 export * from "./components";
 
-export { getTailwindColors } from "./constants/Colors";
+export { getTailwindColors, getCssVariables } from "./constants/Colors";
