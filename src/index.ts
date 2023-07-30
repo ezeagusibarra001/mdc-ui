@@ -1,3 +1,4 @@
-export * from "./components";
+import Button from "./components/Button";
+import Input from "./components/Input";
 
-export { getTailwindColors, getCssVariables } from "./constants/Colors";
+export { Button, Input };
