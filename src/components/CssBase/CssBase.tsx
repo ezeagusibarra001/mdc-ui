@@ -3,7 +3,7 @@ import React from 'react'
 import { getCssVariables } from "../../constants/Colors";
 
 
-const CssBase: React.FC<React.PropsWithChildren<unknown>> = () => {
+const CssBase = () => {
     return (
         <>
             <style>
