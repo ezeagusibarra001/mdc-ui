@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import { AVAILABLE_COLORS } from "../../constants/Colors";
 import { SHADES } from "../../types/types";
-import { fontFamily } from "../CssBaseline/CssBaseline";
 
 type ButtonProps = {
     label: string;
@@ -50,7 +49,6 @@ const Button = ({ label, color = "blue", textColor = "white", shade = "DEFAULT",
                     background-color: ${bgColor};
                     color: var(--${textColor});
                     font-weight: ${textWeight};
-                    font-family: ${fontFamily};
                 }
             `}</style>
         </>
