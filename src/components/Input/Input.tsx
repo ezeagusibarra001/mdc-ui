@@ -2,10 +2,10 @@ import React from "react";
 import "./Input.css";
 
 
-const Button = () => {
+const Input = ({type} : {type: string}) => {
     return (
-       <input type="text" />
+       <input type={type} />
     );
 };
 
-export default Button;
+export default Input;

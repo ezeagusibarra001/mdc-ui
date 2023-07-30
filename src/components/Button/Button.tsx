@@ -1,10 +1,10 @@
 import React from "react";
 import "./Button.css";
-import { AVAILABLE_COLORS } from "../../types/index";
+import { AVAILABLE_COLORS } from "../../constants/Colors";
 
 type ButtonProps = {
     label: string;
-    color?: AVAILABLE_COLORS;
+    color?: keyof typeof AVAILABLE_COLORS;
 };
 
 const Button = ({label, color} : ButtonProps) => {
