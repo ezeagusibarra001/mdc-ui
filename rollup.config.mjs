@@ -1,44 +1,35 @@
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import { babel } from "@rollup/plugin-babel";
+import external from "rollup-plugin-peer-deps-external";
+import resolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
-import postcss from "rollup-plugin-postcss";
-import dts from "rollup-plugin-dts";
+import terser from "@rollup/plugin-terser";
+const packageJson = require("./package.json");
 
-// This is required to read package.json file when
-// using Native ES modules in Node.js
-// https://rollupjs.org/command-line-interface/#importing-package-json
-import { createRequire } from 'node:module';
-const requireFile = createRequire(import.meta.url);
-const packageJson = requireFile('./package.json');
-
-
-export default [{
+export default {
   input: "src/index.ts",
   output: [
     {
       file: packageJson.main,
       format: "cjs",
-      sourcemap: true
+      sourcemap: false,
     },
     {
       file: packageJson.module,
       format: "esm",
-      sourcemap: true
-    }
+      sourcemap: false,
+    },
   ],
   plugins: [
-    peerDepsExternal(),
-    resolve(),
     commonjs(),
+    babel({
+      babelHelpers: "bundled",
+      exclude: "**/node_modules/**",
+      extensions: [".js", ".jsx", ".ts", ".tsx"],
+    }),
+    external(),
+    resolve(),
     typescript(),
-    postcss({
-      extensions: ['.css']
-    })
-  ]
-}, {
-  input: 'lib/index.d.ts',
-  output: [{ file: 'lib/index.d.ts', format: 'es' }],
-  plugins: [dts()],
-  external: [/\.css$/]
-}];
+    terser(),
+  ],
+};
