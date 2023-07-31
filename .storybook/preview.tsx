@@ -1,7 +1,7 @@
 import React from "react";
 import type { Preview } from "@storybook/react";
 import { CssBaseline } from "../src/components";
-
+import "../src/styles/global.css";
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
@@ -11,10 +11,6 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
-    darkMode: {
-      classTarget: 'body',
-      stylePreview: true
-    }
   },
   decorators: [
     (Story) => (
@@ -22,9 +18,8 @@ const preview: Preview = {
         <CssBaseline />
         <Story />
       </div>
-    )
-
-  ]
+    ),
+  ],
 };
 
 export default preview;
