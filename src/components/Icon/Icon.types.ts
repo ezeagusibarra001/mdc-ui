@@ -6,7 +6,8 @@ export const IconNames = [
    "instagram",
    "youtube",
    "facebook",
-   "tiktok"
+   "tiktok",
+   "cross"
 ] as const;
 
 export type IconName = typeof IconNames[number];

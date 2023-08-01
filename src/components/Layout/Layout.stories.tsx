@@ -19,8 +19,8 @@ export const Primary: Story = {
     children: <h1>NASHE</h1>,
     header: {
       logo: "/logo.png",
-      color: "black",
-      shade: "DEFAULT",
+      color: "blue",
+      shade: "900",
       menu: [
         {
           name: "Mis cursos",
@@ -32,6 +32,10 @@ export const Primary: Story = {
         },
         {
           name: "Mentorias",
+          onClick: () => console.log("Mentorias"),
+        },
+        {
+          name: "Sobre WEM",
           onClick: () => console.log("Mentorias"),
         },
       ],
@@ -49,6 +53,10 @@ export const Primary: Story = {
         },
         {
           name: "Mentorias",
+          onClick: () => console.log("Mentorias"),
+        }, 
+        {
+          name: "Sobre WEM",
           onClick: () => console.log("Mentorias"),
         },
       ],

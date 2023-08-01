@@ -16,18 +16,20 @@ const MobileDrawer = ({
     setIsOpen(!isOpen);
   };
 
+  const windowWidth = window.innerWidth;
+  console.log(windowWidth);
   return (
     <>
       <div>
         {/* Button to toggle the drawer */}
         <div className="icon-drawer" onClick={handleToggle}>
-          <Icon name="hamburger" color={color} shade={shade} />
+          <Icon name="hamburger" color={"black"} />
         </div>
         {/* Drawer */}
         <div className="container-drawer">
           <div className={`drawer ${isOpen ? "open" : ""}`}>
             <div className="cross-icon" onClick={handleToggle}>
-              <Icon name="telegram" color="black" />
+              <Icon name="cross" color={color} shade={shade}/>
             </div>
             <div>
               <img src={logo} alt="logo" />
@@ -46,7 +48,7 @@ const MobileDrawer = ({
           ></div>
         </div>
       </div>
-      <style jsx>{`
+      <style>{`
         .container-drawer {
           display: flex;
           width: 100%;
@@ -56,6 +58,7 @@ const MobileDrawer = ({
           top: 0;
           left: -100%;
           width: 75%;
+          max-width: 300px;
           height: 100%;
           background-color: #fff;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -63,7 +66,7 @@ const MobileDrawer = ({
           display: flex;
           flex-direction: column;
           gap: 1.5rem;
-          padding-top:2.5rem;
+          padding-top:4.5rem;
           align-items: center;
         }
         .close-drawer {
@@ -71,6 +74,7 @@ const MobileDrawer = ({
           right: 0;
           top: 0;
           width: 25%;
+          min-width: ${windowWidth * 0.75 > 300 && windowWidth - 320}px;
           height: 100%;
           pointer-events: none;
         }
@@ -91,6 +95,7 @@ const MobileDrawer = ({
         .container-menu span {
           cursor: pointer;
           text-align: center;
+          color: ${shade === "DEFAULT" ? `var(--${color})`: `var(--${color}-${shade})`};"};
         }
 
         button {
@@ -108,7 +113,7 @@ const MobileDrawer = ({
           width: 30px;
           position: absolute;
           right: 0.5rem;
-          top:0.5rem;
+          top:1.5rem;
           cursor: pointer;
         }
       `}</style>

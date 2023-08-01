@@ -97,6 +97,12 @@ export default function Icon({ name, color, shade = "DEFAULT" }: IconProps) {
         />
       </svg>
     ),
+    cross: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18" fill="none">
+        <path d="M2.99902 17L18.5554 1.44365" stroke={iconColor} stroke-width="2" stroke-linecap="round" />
+        <path d="M3 1L18.5563 16.5563" stroke={iconColor} stroke-width="2" stroke-linecap="round" />
+      </svg>
+    )
   };
   const svg = Object.keys(iconDict).includes(name) ? iconDict[name] : null;
   return <>{svg}</>;
