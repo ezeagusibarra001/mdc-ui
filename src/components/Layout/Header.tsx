@@ -6,16 +6,20 @@ export type HeaderProps = {
   logo: string;
   color?: Color;
   shade?: SHADES;
+  menu: {
+    name: string;
+    onClick: () => void;
+  }[];
 };
 
-export default function Header({ logo, color, shade }: HeaderProps) {
+export default function Header(header: HeaderProps) {
   return (
     <>
       <header>
         <div>
-          <img src={logo} alt="logo" />
+          <img src={header.logo} alt="logo" />
         </div>
-        <MobileDrawer />
+        <MobileDrawer {...header} />
       </header>
       <style jsx>
         {`

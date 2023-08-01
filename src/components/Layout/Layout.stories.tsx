@@ -20,6 +20,21 @@ export const Primary: Story = {
     header: {
       logo: "/logo.png",
       color: "black",
+      shade: "DEFAULT",
+      menu: [
+        {
+          name: "Mis cursos",
+          onClick: () => console.log("Mis cursos"),
+        },
+        {
+          name: "Eventos",
+          onClick: () => console.log("Eventos"),
+        },
+        {
+          name: "Mentorias",
+          onClick: () => console.log("Mentorias"),
+        },
+      ],
     },
     footer: {
       logo: "/logo.png",

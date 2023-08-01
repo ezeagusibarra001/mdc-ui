@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import Icon from "../Icon/Icon";
-import { Color, SHADES } from "../../types/types";
+import { HeaderProps } from "./Header";
 
-type MobileDraweProps = {
-  color?: Color;
-  shade?: SHADES;
-};
+type MobileDraweProps = HeaderProps
 
-const MobileDrawer: React.FC = ({
+const MobileDrawer = ({
   color = "black",
   shade = "DEFAULT",
+  logo,
+  menu
 }: MobileDraweProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,8 +26,19 @@ const MobileDrawer: React.FC = ({
         {/* Drawer */}
         <div className="container-drawer">
           <div className={`drawer ${isOpen ? "open" : ""}`}>
-            <h2>Drawer Content</h2>
-            <p>This is the content of the drawer.</p>
+            <div className="cross-icon" onClick={handleToggle}>
+              <Icon name="telegram" color="black" />
+            </div>
+            <div>
+              <img src={logo} alt="logo" />
+            </div>
+            <div className="container-menu">
+              {menu.map(({ name, onClick }) => (
+                <span onClick={onClick} key={name}>
+                  {name}
+                </span>
+              ))}
+            </div>
           </div>
           <div
             onClick={handleToggle}
@@ -50,6 +60,11 @@ const MobileDrawer: React.FC = ({
           background-color: #fff;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
           transition: left 0.3s ease;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          padding-top:2.5rem;
+          align-items: center;
         }
         .close-drawer {
           position: absolute;
@@ -67,8 +82,17 @@ const MobileDrawer: React.FC = ({
         .drawer.open {
           left: 0;
         }
+        
+        .container-menu {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+        .container-menu span {
+          cursor: pointer;
+          text-align: center;
+        }
 
-        /* Additional styling for the button */
         button {
           padding: 10px;
           background-color: #007bff;
@@ -79,6 +103,13 @@ const MobileDrawer: React.FC = ({
         }
         .icon-drawer {
           width: 30px;
+        }
+        .cross-icon{
+          width: 30px;
+          position: absolute;
+          right: 0.5rem;
+          top:0.5rem;
+          cursor: pointer;
         }
       `}</style>
     </>
