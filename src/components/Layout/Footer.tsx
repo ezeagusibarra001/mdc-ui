@@ -1,6 +1,7 @@
 import React from "react";
 import { IconName } from "../Icon/Icon.types";
 import Icon from "../Icon/Icon";
+import classNames from "./Layout.module.css";
 
 export type FooterProps = {
   logo: string;
@@ -17,18 +18,18 @@ export type FooterProps = {
 export default function Footer({ logo, social, menu }: FooterProps) {
   return (
     <>
-      <footer>
+      <footer className={classNames.footer}>
         <div>
           <img src={logo} alt="logo" />
         </div>
-        <div className="container-social">
+        <div className={classNames.containerSocial}>
           {social.map(({ name, url }) => (
-            <a className="icon-social" target="_blank" href={url} key={name}>
+            <a className={classNames.iconSocial} target="_blank" href={url} key={name}>
               <Icon color="black" name={name} />
             </a>
           ))}
         </div>
-        <div className="container-menu">
+        <div className={classNames.containerMenu}>
           {menu.map(({ name, onClick }) => (
             <span onClick={onClick} key={name}>
               {name}
@@ -36,39 +37,6 @@ export default function Footer({ logo, social, menu }: FooterProps) {
           ))}
         </div>
       </footer>
-      <style jsx>
-        {`
-          footer {
-            padding-top: 2.5rem;
-            padding-bottom: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-            -webkit-box-shadow: 0px -5px 29px 0px rgba(35, 35, 35, 0.5);
-            -moz-box-shadow: 0px -5px 29px 0px rgba(35, 35, 35, 0.5);
-            box-shadow: 0px -5px 29px 0px rgba(35, 35, 35, 0.5);
-          }
-          .icon-social {
-            width: 30px;
-          }
-          .container-social {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 250px;
-          }
-          .container-menu {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-          }
-          .container-menu span {
-            cursor: pointer;
-            text-align: center;
-          }
-        `}
-      </style>
     </>
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import Header, { HeaderProps } from './Header'
 import Footer, { FooterProps } from './Footer'
+import classNames from "./Layout.module.css";
 
 type LayoutProps = {
   children: React.ReactNode
@@ -9,23 +10,12 @@ type LayoutProps = {
   footer: FooterProps
 }
 
-export default function Layout({ children, className, header, footer }: LayoutProps) {
+export default function Layout({ children, header, footer }: LayoutProps) {
   return (
     <div className='wrapper'>
       <Header {...header} />
-      <main className={className}>{children}</main>
+      <main className={classNames.main} >{children}</main>
       <Footer {...footer} />
-      <style jsx>
-        {`
-          .wrapper{
-            display: flex;
-            flex-direction: column;
-          }
-          main{
-            height: calc(100vh - 100px);
-          }
-        `}
-      </style>
     </div>
   )
 }

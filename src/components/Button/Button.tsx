@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { AVAILABLE_COLORS } from "../../constants/Colors";
 import { SHADES } from "../../types/types";
+import classNames from "./Button.module.css";
 
 type ButtonProps = {
     label: string;
@@ -12,7 +13,7 @@ type ButtonProps = {
 };
 
 export default function Button({ label, color = "blue", textColor = "white", shade = "DEFAULT", size = "medium", weight = "regular" }: ButtonProps) {
-    const bgColor = useMemo(() => (shade === "DEFAULT" ? `var(--${color})` : `var(--${color}-${shade})`), [color, shade]);
+    const bgColor = shade === "DEFAULT" ? `var(--${color})` : `var(--${color}-${shade})`
     const textSize = useMemo(() => {
         switch (size) {
             case "small":
@@ -37,20 +38,10 @@ export default function Button({ label, color = "blue", textColor = "white", sha
                 return "900";
         }
     }, [weight]);
+    const styles = { fontSize: textSize, backgroundColor: bgColor, fontWeight: textWeight, color: `var(--${textColor})` }
     return (
         <>
-            <button>{label}</button>
-            <style jsx>{`
-                button {
-                    border: none;
-                    border-radius: 40px;
-                    font-size: ${textSize};
-                    padding: 13px 20px;
-                    background-color: ${bgColor};
-                    color: var(--${textColor});
-                    font-weight: ${textWeight};
-                }
-            `}</style>
+            <button className={classNames.button} style={styles} >{label}</button>
         </>
     );
 };

@@ -1,0 +1,101 @@
+/*HEADER*/
+.main {
+  height: calc(100vh - 100px);
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+/*FOOTER*/
+.footer {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  -webkit-box-shadow: 0px -5px 29px 0px rgba(35, 35, 35, 0.5);
+  -moz-box-shadow: 0px -5px 29px 0px rgba(35, 35, 35, 0.5);
+  box-shadow: 0px -5px 29px 0px rgba(35, 35, 35, 0.5);
+}
+.iconSocial {
+  width: 30px;
+}
+.containerSocial {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 250px;
+}
+.containerMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.containerMenu span {
+  cursor: pointer;
+  text-align: center;
+}
+
+/*DRAWER*/
+.containerDrawer {
+  display: flex;
+  width: 100%;
+}
+.drawer {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  max-width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 4.5rem;
+  align-items: center;
+}
+.drawer.open {
+  left: 0;
+}
+.closeDrawer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.closeDrawer.open {
+  pointer-events: auto;
+}
+.containerMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.containerMenu span {
+  cursor: pointer;
+  text-align: center;
+}
+.iconDrawer {
+  width: 30px;
+}
+
+.crossIcon {
+  width: 30px;
+  position: absolute;
+  right: 0.5rem;
+  top: 1.5rem;
+  cursor: pointer;
+}

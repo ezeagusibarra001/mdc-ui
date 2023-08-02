@@ -7,16 +7,15 @@ export default function Icon({ name, color, shade = "DEFAULT" }: IconProps) {
   const iconDict: { [T in IconName]: JSX.Element } = {
     hamburger: (
       <svg
-        style={{ stroke: iconColor }}
         xmlns="http://www.w3.org/2000/svg"
         width="100%"
         height="100%"
         viewBox="0 0 24 16"
         fill="none"
       >
-        <path d="M1 1H23" strokeWidth="2" strokeLinecap="round" />
-        <path d="M1 8H23" strokeWidth="2" strokeLinecap="round" />
-        <path d="M1 15H23" strokeWidth="2" strokeLinecap="round" />
+        <path stroke={iconColor} d="M1 1H23" strokeWidth="2" strokeLinecap="round" />
+        <path stroke={iconColor} d="M1 8H23" strokeWidth="2" strokeLinecap="round" />
+        <path stroke={iconColor} d="M1 15H23" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
     telegram: (
@@ -98,7 +97,8 @@ export default function Icon({ name, color, shade = "DEFAULT" }: IconProps) {
       </svg>
     ),
     cross: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18" fill="none">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%"
+        height="100%" viewBox="0 0 22 18" fill="none">
         <path d="M2.99902 17L18.5554 1.44365" stroke={iconColor} stroke-width="2" stroke-linecap="round" />
         <path d="M3 1L18.5563 16.5563" stroke={iconColor} stroke-width="2" stroke-linecap="round" />
       </svg>

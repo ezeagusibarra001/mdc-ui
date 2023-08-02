@@ -1,6 +1,7 @@
 import React from "react";
 import { Color, SHADES } from "../../types/types";
 import MobileDrawer from "./Drawer";
+import classNames from "./Layout.module.css";
 
 export type HeaderProps = {
   logo: string;
@@ -15,22 +16,12 @@ export type HeaderProps = {
 export default function Header(header: HeaderProps) {
   return (
     <>
-      <header>
+      <header className={classNames.header}>
         <div>
           <img src={header.logo} alt="logo" />
         </div>
         <MobileDrawer {...header} />
       </header>
-      <style jsx>
-        {`
-          header {
-            display: flex;
-            height: 100px;
-            align-items: center;
-            justify-content: space-evenly;
-          }
-        `}
-      </style>
     </>
   );
 }

@@ -9,7 +9,7 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
     return (
         <>
             {children}
-            <style global jsx>
+            <style>
                 {`
                 :root {
                     ${getCssVariables()}
