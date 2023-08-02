@@ -2,10 +2,6 @@
 .main {
   height: calc(100vh - 100px);
 }
-.wrapper {
-  display: flex;
-  flex-direction: column;
-}
 .header {
   display: flex;
   height: 100px;

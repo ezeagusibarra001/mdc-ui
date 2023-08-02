@@ -5,14 +5,14 @@ import classNames from "./Layout.module.css";
 
 type LayoutProps = {
   children: React.ReactNode
-  className?: string
+  fontFamily?: string
   header: HeaderProps
   footer: FooterProps
 }
 
-export default function Layout({ children, header, footer }: LayoutProps) {
+export default function Layout({ children, fontFamily, header, footer }: LayoutProps) {
   return (
-    <div className='wrapper'>
+    <div className={fontFamily}>
       <Header {...header} />
       <main className={classNames.main} >{children}</main>
       <Footer {...footer} />
