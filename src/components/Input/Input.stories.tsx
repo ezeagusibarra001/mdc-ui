@@ -15,9 +15,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
-        label: "Primary Input",
-        value: "",
-        onChange: () => { },
+        label: {
+            text: "Label",
+            color: "black",
+        },
+        onChange: (value) => { console.log(value) },
         placeholder: "Placeholder",
+        bgColor: "gray",
+        textColor: "white",
     },
 };

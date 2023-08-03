@@ -23,3 +23,11 @@
 .container input:focus {
     outline: none;
 }
+
+.container .black::placeholder {
+    color: var(--black);
+}
+
+.container .white::placeholder {
+    color: var(--white);
+}

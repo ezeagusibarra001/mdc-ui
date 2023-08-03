@@ -3,8 +3,11 @@ import classNames from "./Input.module.css";
 import { Color, SHADES } from '../../types/types';
 
 type InputProps = {
-    label?: string;
-    value: string;
+    label?: {
+        text: string;
+        color?: Color;
+    };
+    value?: string;
     onChange: (value: string) => void;
     type?: "text" | "number" | "password";
     placeholder?: string;
@@ -15,12 +18,17 @@ type InputProps = {
 
 export default function Input({ label, value, onChange, type = "text", placeholder = "", bgColor = "white", shade = "DEFAULT", textColor = "black" }: InputProps) {
     const inputStyles = {
-        backgroundColor: shade === "DEFAULT" ? `var(--${bgColor})` : `var(--${bgColor}-${shade})`
+        backgroundColor: shade === "DEFAULT" ? `var(--${bgColor})` : `var(--${bgColor}-${shade})`,
+        color: `var(--${textColor})`,
     };
+    const placesHolderClass = textColor === "white" ? classNames.white : classNames.black;
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        onChange(e.target.value);
+    }
     return (
         <div className={classNames.container}>
-            {label && <label>{label}</label>}
-            <input style={inputStyles} type={type} placeholder={placeholder} />
+            {label && <label style={{ color: `var(--${label.color})` }} >{label.text}</label>}
+            <input value={value} onChange={handleChange} className={placesHolderClass} style={inputStyles} type={type} placeholder={placeholder} />
         </div>
     )
 }
