@@ -4,6 +4,7 @@ import { SHADES } from "../../types/types";
 import classNames from "./Button.module.css";
 
 type ButtonProps = {
+    onClick: () => void;
     label: string;
     color?: keyof typeof AVAILABLE_COLORS;
     textColor?: keyof typeof AVAILABLE_COLORS;
@@ -12,7 +13,7 @@ type ButtonProps = {
     weight?: "extralight" | "light" | "regular" | "semibold" | "bold";
 };
 
-export default function Button({ label, color = "blue", textColor = "white", shade = "DEFAULT", size = "medium", weight = "regular" }: ButtonProps) {
+export default function Button({ onClick, label, color = "blue", textColor = "white", shade = "DEFAULT", size = "medium", weight = "regular" }: ButtonProps) {
     const bgColor = shade === "DEFAULT" ? `var(--${color})` : `var(--${color}-${shade})`
     const textSize = useMemo(() => {
         switch (size) {
@@ -41,7 +42,7 @@ export default function Button({ label, color = "blue", textColor = "white", sha
     const styles = { fontSize: textSize, backgroundColor: bgColor, fontWeight: textWeight, color: `var(--${textColor})` }
     return (
         <>
-            <button className={classNames.button} style={styles} >{label}</button>
+            <button onClick={onClick} className={classNames.button} style={styles} >{label}</button>
         </>
     );
 };

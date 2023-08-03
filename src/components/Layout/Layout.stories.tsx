@@ -23,20 +23,34 @@ export const Primary: Story = {
       shade: "900",
       menu: [
         {
-          name: "Mis cursos",
-          onClick: () => console.log("Mis cursos"),
+          name: "Home",
+          onClick: () => console.log("Home"),
+        },
+        {
+          name: "Sobre Mi",
+          onClick: () => console.log("Sobre Mi"),
+        },
+        {
+          name: "Capacitaciones",
+          onClick: () => console.log("Capacitaciones"),
         },
         {
           name: "Eventos",
           onClick: () => console.log("Eventos"),
         },
         {
-          name: "Mentorias",
-          onClick: () => console.log("Mentorias"),
+          name: "WEM",
+          onClick: () => console.log("WEM"),
         },
         {
-          name: "Sobre WEM",
-          onClick: () => console.log("Mentorias"),
+          name: "Contacto",
+          onClick: () => console.log("Contacto"),
+        },
+        {
+          name: "Admin",
+          onClick: () => console.log("Contacto"),
+          isButton: true,
+          isOnlyDesktop: true,
         },
       ],
     },
@@ -54,7 +68,7 @@ export const Primary: Story = {
         {
           name: "Mentorias",
           onClick: () => console.log("Mentorias"),
-        }, 
+        },
         {
           name: "Sobre WEM",
           onClick: () => console.log("Mentorias"),

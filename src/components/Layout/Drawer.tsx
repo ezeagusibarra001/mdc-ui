@@ -39,6 +39,11 @@ const MobileDrawer = ({
           <Icon name="hamburger" color={"black"} />
         </div>
         <div className={classNames.containerDrawer}>
+          <div
+            onClick={handleToggle}
+            style={closeDrawerMinWidth}
+            className={`${classNames.closeDrawer} ${isOpen ? classNames.open : ""}`}
+          ></div>
           <div className={`${classNames.drawer} ${isOpen ? classNames.open : ""}`}>
             <div className={classNames.crossIcon} onClick={handleToggle}>
               <Icon name="cross" color={color} shade={shade} />
@@ -54,11 +59,6 @@ const MobileDrawer = ({
               ))}
             </div>
           </div>
-          <div
-            onClick={handleToggle}
-            style={closeDrawerMinWidth}
-            className={`${classNames.closeDrawer} ${isOpen ? classNames.open : ""}`}
-          ></div>
         </div>
       </div>
     </>
