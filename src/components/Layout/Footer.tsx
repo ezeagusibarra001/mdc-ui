@@ -19,15 +19,17 @@ export default function Footer({ logo, social, menu }: FooterProps) {
   return (
     <>
       <footer className={classNames.footer}>
-        <div>
-          <img src={logo} alt="logo" />
-        </div>
-        <div className={classNames.containerSocial}>
-          {social.map(({ name, url }) => (
-            <a className={classNames.iconSocial} target="_blank" href={url} key={name}>
-              <Icon color="black" name={name} />
-            </a>
-          ))}
+        <div className={classNames.containerRedesAndLogo}>
+          <div >
+            <img className={classNames.logoFooter} src={logo} alt="logo" />
+          </div>
+          <div className={classNames.containerSocial}>
+            {social.map(({ name, url }) => (
+              <a className={classNames.iconSocial} target="_blank" href={url} key={name}>
+                <Icon color="black" name={name} />
+              </a>
+            ))}
+          </div>
         </div>
         <div className={classNames.containerMenu}>
           {menu.map(({ name, onClick }) => (
