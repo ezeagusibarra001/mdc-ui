@@ -20,7 +20,7 @@ export default function Card({ img, title, price, onClick, label }: CardProps) {
         <span>{price} USD</span>
       </div>
       <div className={classNames.button}>
-        <Button label='Comprar Ahora' shade='900' />
+        <Button label='Comprar Ahora' shade='900' onClick={onClick}/>
       </div>
     </div>
   )
