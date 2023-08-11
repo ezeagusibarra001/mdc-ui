@@ -148,6 +148,7 @@ export default function App({ Component, pageProps }: AppProps) {
 In case you are using Tailwind.css add this in the `tailwind.config.js`
 
 ```js
+/** @type {import('tailwindcss').Config} */
 extend: {
     colors: {
         ...getTailwindColors(),
