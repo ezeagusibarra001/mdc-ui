@@ -10,7 +10,7 @@ npm install mdc-ui
 ```
 ## Set Up
 
-> src/constants/Color.ts
+Set this logic for the color palette in the `src/constants/Color.ts` directory. You can change or add any color you want. Take in count if you add for example a new color you should also update the mdc-ui repository.
 
 Create this file in your Next App and add the following code:
 
@@ -122,5 +122,35 @@ export const getCssVariables = () => {
 
 export const getTailwindColors = () => {
     return AVAILABLE_COLORS;
+}
+```
+Add the css variables in the `src/pages/_app.tsx` directory. This will add the **:root** variables.
+
+```tsx
+import '@/styles/globals.css'
+import type { AppProps } from 'next/app'
+import { getCssVariables } from '@/constants/Colors'
+
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <>
+        <style>
+            {`
+                :root {
+                    ${getCssVariables()}
+                }
+            `}
+        </style>
+        <Component {...pageProps} />
+    </>
+  )}
+```
+In case you are using Tailwind.css add this in the `tailwind.config.js`
+
+```js
+extend: {
+    colors: {
+        ...getTailwindColors(),
+    },
 }
 ```
