@@ -4,4 +4,5 @@ export { default as Icon } from "./Icon";
 export { default as Card } from "./Card";
 export { default as Input } from "./Input";
 export { default as Slider } from "./Slider";
+export { default as Modal } from "./Modal";
 export { default as CssBaseline } from "./CssBaseline";

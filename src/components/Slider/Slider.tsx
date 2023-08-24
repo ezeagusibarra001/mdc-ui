@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
-
+import classNames from "./Slider.module.css";
 type SliderProps = {
     items: React.ReactNode[];
     loop?: boolean;
@@ -21,7 +21,7 @@ export default function Slider({ items, loop = true, delay = 2500 }: SliderProps
                 clickable: true,
                 dynamicBullets: true,
             }}
-            className='carousel'
+            className={classNames.carousel}
             loop={loop}
             modules={[Autoplay, Pagination]}
         >
