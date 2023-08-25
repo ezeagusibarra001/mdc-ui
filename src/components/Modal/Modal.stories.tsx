@@ -19,5 +19,6 @@ export const Primary: Story = {
         children: <div>'Modal'</div>,
         isOpen: true,
         onClose: () => { },
+        bgColor: "blue"
     },
 };
