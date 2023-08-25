@@ -1,5 +1,6 @@
-import React, { useState, ReactNode, useEffect } from 'react';
-import styles from './Modal.module.css'; // Importa el módulo CSS
+import React, { ReactNode } from 'react';
+import styles from './Modal.module.css';
+import Icon from '../Icon/Icon';
 
 interface ModalProps {
     children: ReactNode;
@@ -8,24 +9,11 @@ interface ModalProps {
 }
 
 export default function Modal({ children, isOpen, onClose }: ModalProps) {
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-    const handleResize = () => {
-        setIsMobile(window.innerWidth <= 768);
-    };
-
-    useEffect(() => {
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
     return isOpen ? (
-        <div className={`${styles['modal-overlay']} ${isMobile ? styles.mobile : ''}`}>
+        <div className={`${styles['modal-overlay']}`}>
             <div className={styles.modal}>
                 <button className={styles['close-button']} onClick={onClose}>
-                    X
+                    <Icon name="cross" color='black' />
                 </button>
                 <div className={styles['modal-content']}>{children}</div>
             </div>
