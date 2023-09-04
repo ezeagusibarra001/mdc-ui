@@ -12,6 +12,7 @@ export const IconNames = [
   "clip",
   "play",
   "stars",
+  "arrowRight",
 ] as const;
 
 export type IconName = (typeof IconNames)[number];
