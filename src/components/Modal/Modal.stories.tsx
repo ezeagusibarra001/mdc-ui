@@ -22,3 +22,18 @@ export const Primary: Story = {
         bgColor: "blue"
     },
 };
+
+export const Image: Story = {
+    args: {
+        children: <div>
+            <h1>Modal</h1>
+            <p>Modal with image</p>
+            'Modal'
+            'Modal'
+            'Modal'
+        </div>,
+        isOpen: true,
+        onClose: () => { },
+        bgImage: "/bg.png"
+    },
+};
