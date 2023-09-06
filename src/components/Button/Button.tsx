@@ -11,9 +11,10 @@ type ButtonProps = {
     shade?: SHADES;
     size?: "small" | "medium" | "large";
     weight?: "extralight" | "light" | "regular" | "semibold" | "bold";
+    disabled?: boolean;
 };
 
-export default function Button({ onClick, label, color = "blue", textColor = "white", shade = "DEFAULT", size = "medium", weight = "regular" }: ButtonProps) {
+export default function Button({ onClick, label, color = "blue", textColor = "white", shade = "DEFAULT", size = "medium", weight = "regular", disabled }: ButtonProps) {
     const bgColor = shade === "DEFAULT" ? `var(--${color})` : `var(--${color}-${shade})`
     const textSize = useMemo(() => {
         switch (size) {
@@ -42,7 +43,7 @@ export default function Button({ onClick, label, color = "blue", textColor = "wh
     const styles = { fontSize: textSize, backgroundColor: bgColor, fontWeight: textWeight, color: `var(--${textColor})` }
     return (
         <>
-            <button onClick={onClick} className={classNames.button} style={styles} >{label}</button>
+            <button disabled={disabled} onClick={onClick} className={classNames.button} style={styles} >{label}</button>
         </>
     );
 };
