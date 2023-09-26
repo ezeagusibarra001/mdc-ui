@@ -15,6 +15,11 @@ export const IconNames = [
   "arrowRight",
   "quotes",
   "arrowDown",
+  "school",
+  "women",
+  "copy",
+  "phone",
+  "email"
 ] as const;
 
 export type IconName = (typeof IconNames)[number];
